@@ -22758,7 +22758,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     getMovies(token) {
-        _axiosDefault.default.get('https://intense-ridge-76926.herokuapp.com/movies', {
+        _axiosDefault.default.get('https://intense-ridge-76926.herokuapp.com/', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
