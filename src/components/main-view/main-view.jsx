@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
@@ -68,7 +69,7 @@ export class MainView extends React.Component {
     
   
     return(
-      <Routes>
+      <Router>
         <Row className="main-view justify-content-md-center">
 
           <Route exact path="/" render={() => {
@@ -79,13 +80,12 @@ export class MainView extends React.Component {
              );
             
            
-            return movies.map(movie => (
+             return 
+               movies.map(m => (
               <Col md={3} key={m._id}>
-                <MovieCard movie={movie} onMovieClick={() => {}} />
+                <MovieCard movie={m} />
               </Col>
-            
-              
-            ))
+               ))
           }} />
     
         <Route path="/register" render={() => {
@@ -160,7 +160,7 @@ export class MainView extends React.Component {
 
 
         </Row>
-      </Routes>
+      </Router>
     );
   }
 }
