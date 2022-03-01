@@ -12,7 +12,7 @@ export class DirectorView extends React.Component {
         return (
             <Container>
                 <br />
-                <Card bg="secondary" text="light" border="light" align="center">
+                <Card bg="secondary" text="dark" border="dark" align="center">
                     
                     <Card.Body>
                     <Card.Title>Director</Card.Title>
@@ -23,14 +23,6 @@ export class DirectorView extends React.Component {
                         <div>
                             <span className="label">Bio: </span>
                             <span className="value">{Director.Bio}</span>
-                        </div>
-                        <div>
-                            <span className="label">Born: </span>
-                            <span className="value">{Director.Birthyear}</span>
-                        </div>
-                        <div>
-                            <span className="label">Death: </span>
-                            <span className="value">{Director.Deathyear}</span>
                         </div>
                         <br />
                         <div className="backButton">
@@ -47,8 +39,6 @@ export class DirectorView extends React.Component {
         Director: PropTypes.shape({
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired,
-            Birthyear: PropTypes.string,
-            Deathyear: PropTypes.string
           }),
           onBackClick: PropTypes.func.isRequired
       };
