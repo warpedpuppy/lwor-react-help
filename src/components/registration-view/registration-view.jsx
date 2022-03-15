@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import axios from 'axios';
+
+import './registration-view.scss';
 
 export function RegistrationView(props) {
     const [ username, setUsername ] = useState('');
@@ -13,6 +17,21 @@ export function RegistrationView(props) {
         /* then call props.onLoggedIn(username) */
         props.onRegistration(username);
     };
+
+    axios.post('https://intense-ridge-76926.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        Email: email,
+        Birthday: birthday
+      })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+      })
+      .catch(e => {
+        console.log('error registering the user')
+      });
 
     return (
         <form>

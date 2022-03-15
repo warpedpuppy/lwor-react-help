@@ -1,5 +1,11 @@
 import React from 'react';
 
+import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+
+import axios from 'axios';import Button from 'react-bootstrap/Button';
+
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
 
   keypressCallback(event) {
@@ -15,29 +21,30 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath}/>
-        </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <div className="movie-genre">
-                    <span className="label">Genre: </span>
-                    <span className="value">{movie.Genre}</span>
-                </div>
-                <div className="movie-director">
-                    <span className="label">Director: </span>
-                    <span className="value">{movie.Director}</span>
-                </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
+      <Container className="movie-view">
+      <Row >
+          <Col>
+              <Card.Img variant="bottom" src={movie.ImagePath} crossOrigin="anonymous" />
+          </Col>
+          <Col>
+              <Card.Body>
+                  <Card.Title>{movie.Title}</Card.Title>
+                  <Card.Text>{movie.Description}</Card.Text>
+              </Card.Body>
 
-       </div>
+              <Card.Body>
+                  <Card.Subtitle className="mb-2 text-muted">Genre:</Card.Subtitle>
+                  <Card.Text>{movie.Genre.Name}</Card.Text>
+              </Card.Body>
+              <Card.Body>
+                  <Card.Subtitle className="mb-2 text-muted">Director:</Card.Subtitle>
+                  <Card.Text>{movie.Director.Name}</Card.Text>
+                  <Button onClick={() => { onBackClick() }}>Back</Button>
+              </Card.Body>
+          </Col>
+      </Row>
+  </Container>
+
     );
   }
 }
