@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/lwor1987/myFlix-client.git"
   },
-  "keywords": [],
+  
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -28,10 +28,8 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9"
-  
-},
-
-"devDependencies": {
-  "@parcel/transformer-sass": "^2.0.0-rc.0"
-}
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2"
+  }
 }
