@@ -67,8 +67,9 @@ class MainView extends React.Component {
 
 
   render() {
-    let { movies } = this.props;
-    let { user } = this.state;
+    let { movies, user } = this.props;
+    let localUser = localStorage.getItem('user');
+
     
    
     
@@ -184,11 +185,13 @@ class MainView extends React.Component {
   }
 }
 
-let mapStateToProps = state => {
-  return { movies: state.movies }
-}
+let mapStateToProps = (state) => {
+  return { movies: state.movies, user: state.user, userData: state.userData };
+};
 
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, { setMovies, setUser, setUserData })(
+  MainView
+);
 
 
  
