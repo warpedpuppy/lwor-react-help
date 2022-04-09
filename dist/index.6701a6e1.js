@@ -25798,19 +25798,19 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        let { movies , user  } = this.props;
-        let localUser = localStorage.getItem('user');
+        let { movies  } = this.props;
+        let { user  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 78
+                lineNumber: 77
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 79
+                    lineNumber: 78
                 },
                 __self: this,
                 children: [
@@ -25832,7 +25832,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 81
+                            lineNumber: 80
                         },
                         __self: this
                     }),
@@ -25849,7 +25849,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 92
+                            lineNumber: 91
                         },
                         __self: this
                     }),
@@ -25876,7 +25876,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 103
+                            lineNumber: 102
                         },
                         __self: this
                     }),
@@ -25905,7 +25905,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 122
+                            lineNumber: 121
                         },
                         __self: this
                     }),
@@ -25934,7 +25934,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 143
+                            lineNumber: 142
                         },
                         __self: this
                     }),
@@ -25956,7 +25956,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 165
+                            lineNumber: 164
                         },
                         __self: this
                     })
@@ -25967,15 +25967,11 @@ class MainView extends _reactDefault.default.Component {
 }
 let mapStateToProps = (state)=>{
     return {
-        movies: state.movies,
-        user: state.user,
-        userData: state.userData
+        movies: state.movies
     };
 };
 exports.default = _reactRedux.connect(mapStateToProps, {
-    setMovies: _actions.setMovies,
-    setUser,
-    setUserData
+    setMovies: _actions.setMovies
 })(MainView);
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);

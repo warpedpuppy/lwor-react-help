@@ -15,7 +15,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 
 import { setMovies } from '../../actions/actions';
-import MoviesList from '../movie-list/movie-list';
+import MoviesList from '../movies-list/movies-list';
 
 import './main-view.scss';
 
@@ -67,8 +67,9 @@ class MainView extends React.Component {
 
 
   render() {
-    let { movies } = this.props;
-    let { user } = this.state;
+    let { movies, user } = this.props;
+    let localUser = localStorage.getItem('user');
+
     
    
     
@@ -184,11 +185,13 @@ class MainView extends React.Component {
   }
 }
 
-let mapStateToProps = state => {
-  return { movies: state.movies }
-}
+let mapStateToProps = (state) => {
+  return { movies: state.movies, user: state.user, userData: state.userData };
+};
 
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, { setMovies, setUser, setUserData })(
+  MainView
+);
 
 
  
