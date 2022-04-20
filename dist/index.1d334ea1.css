@@ -30,12 +30,6 @@ body {
   background-color: #1D0334;
   color: #ffffff;
 }
-* {
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  background-color: #1D0334;
-  color: #ffffff;
-}
 
 body {
   padding: inherit;
