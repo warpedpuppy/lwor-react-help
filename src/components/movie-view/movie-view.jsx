@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-import axios from 'axios';import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 import './movie-view.scss';
 
