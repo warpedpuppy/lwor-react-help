@@ -157,42 +157,56 @@ export class ProfileView extends React.Component {
 
     render() {
         const { movies, onBackClick } = this.props;
-        const { FavoriteMovies, Username, Email, Birthday } = this.state;
-
+        const { FavoriteMovies, Username, Password, Email, Birthday } = this.state;
+    
         if (!Username) {
-            return null;
+          return null;
         }
-
+    
         return (
-            <Container className="profile-view" align="center">
-                <Row>
-                    <Col>
-                        <Card className="update-profile">
-                            <Card.Body>
-                                <Card.Title>Profile</Card.Title>
-                                <Form
-                                    className="update-form"
-                                    onSubmit={(e) =>
-                                        this.editUser(
-                                            e,
-                                            this.Username,
-                                            this.Password,
-                                            this.Email,
-                                            this.Birthday
-                                        )
-                                    }
-                                >
-                                    <Form.Group>
-                                        <Form.Label>Username</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            name="Username"
-                                            placeholder="New Username"
-                                            value={Username}
-                                            onChange={(e) => this.setUsername(e.target.value)}
-                                            required
-                                        />
-                                    </Form.Group>
+          <Container className="profile-view" align="center">
+            <Row>
+              <Col>
+                <Card className="user-info" style={{ color: "white", backgroundColor: "#393e46" }}>
+                  <Card.Body>
+                    <Card.Title>User Info</Card.Title>
+                    <div>
+                      <span style={{ color: "white" }}>Username: {Username}</span>
+                    </div>
+                    <div>
+                      <span style={{ color: "white" }}>Email: {Email}</span>
+                    </div>
+                    <div>
+                      <span style={{ color: "white" }}>Birthday: {Birthday}</span>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card className="update-profile" style={{ color: "white", backgroundColor: "#393e46" }}>
+                  <Card.Body>
+                    <Card.Title>Update Profile</Card.Title>
+                    <Form className="update-form" onSubmit={(e) =>
+                      this.editUser(
+                        e,
+                        this.Username,
+                        this.Password,
+                        this.Email,
+                        this.Birthday
+                      )}>
+    
+                      <Form.Group>
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                          type="text"
+                          name="Username"
+                          placeholder="New Username"
+                          value={Username}
+                          onChange={(e) => this.setUsername(e.target.value)}
+                          required
+                        />
+                      </Form.Group>
+    
 
                                     <Form.Group>
                                         <Form.Label>Password</Form.Label>

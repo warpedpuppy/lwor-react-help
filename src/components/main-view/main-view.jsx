@@ -50,13 +50,11 @@ class MainView extends React.Component {
     });
   }
 
-
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
       user: authData.user.Username
     });
-
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
@@ -189,11 +187,11 @@ class MainView extends React.Component {
 let mapStateToProps = (state) => {
   return { 
     movies: state.movies, 
-    user: state.user
+ 
   }
 };
 
-export default connect(mapStateToProps, { setMovies, setUser, setUserData })(
+export default connect(mapStateToProps, { setMovies})(
   MainView
 );
 
