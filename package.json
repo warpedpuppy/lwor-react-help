@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/lwor1987/myFlix-client/issues"
   },
-  "homepage": "https://github.com/lwor1987/myFlix-client#readme",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.25.0",
     "parcel": "^2.0.0-rc.0",
