@@ -25783,7 +25783,7 @@ class MainView extends _reactDefault.default.Component {
         }).then((response)=>{
             // Assign the result to the state
             this.props.setMovies(response.data);
-        }).catch(function(error) {
+        }).catch((error)=>{
             console.log(error);
         });
     }
