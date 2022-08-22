@@ -25,7 +25,7 @@ class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-      user: localStorage.getItem('user'),
+      user: null,
     };
   }
   componentDidMount() {
@@ -44,16 +44,12 @@ class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      this.setState({
-        movies: response.data
-    });
-
-    store.dispatch(setMovies(response.data));
-})
-    .catch((error) =>  {
+      this.props.setMovies(response.data);
+    })
+    .catch(function (error) {
       console.log(error);
     });
-  }
+}
 
   onLoggedIn(authData) {
     console.log(authData);
@@ -90,7 +86,7 @@ class MainView extends React.Component {
                   </Col>
                   if (movies.length === 0) return <div className="main-view" />;
 
-                  return <MoviesList movies={movies}/>;
+                  return <MoviesList movies={movies} />;
                 }} />
 
     
@@ -99,7 +95,7 @@ class MainView extends React.Component {
           if (user) {
           return <Redirect to='/' />
           }
-         return <Col>
+         return <Col lg={8} md={4}l>
          <RegistrationView />
          </Col>
         }} />
@@ -141,7 +137,7 @@ class MainView extends React.Component {
                <Col md={8}>
                 <GenreView 
                 genre={movies.find((m) => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} 
-                movies={movies.filter(movie => movies.Genre.Name === match.params.name)}/>
+               />
               </Col>
               )
             }} />
