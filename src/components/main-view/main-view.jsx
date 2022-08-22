@@ -6,15 +6,16 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import { LoginView } from '../login-view/login-view';
+import  LoginView  from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from '../movie-view/movie-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 
-import { setMovies } from '../../actions/actions';
-import MoviesList from '../movies-list/movies-list';
+import { setMovies, setUser } from '../../actions/actions';
+import MoviesList from '../movie-list/movie-list';
 
 import './main-view.scss';
 
