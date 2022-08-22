@@ -73,6 +73,7 @@ class MainView extends React.Component {
   render() {
     let { movies } = this.props;
     let { user } = this.state;
+    let localUser = localStorage.getItem('user');
 
     
    
@@ -80,6 +81,7 @@ class MainView extends React.Component {
   
     return(
       <Router>
+        <Container>
         <Row className='main-view justify-content-md-center'>
 
         <Route exact path='/' render={() => {
@@ -184,6 +186,7 @@ class MainView extends React.Component {
 
 
         </Row>
+        </Container>
       </Router>
     );
   }
@@ -192,11 +195,12 @@ class MainView extends React.Component {
 let mapStateToProps = (state) => {
   return { 
     movies: state.movies, 
+    user: state.user,
  
   }
 };
 
-export default connect(mapStateToProps, { setMovies})(
+export default connect(mapStateToProps, { setMovies })(
   MainView
 );
 
