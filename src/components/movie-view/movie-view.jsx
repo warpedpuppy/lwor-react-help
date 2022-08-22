@@ -1,62 +1,49 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
-import axios from 'axios';
+
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
-  render() {
-    const { movie, onBackClick } = this.props;
-
-    return (
-        <Row className="main-view justify-content-md-center">
-            <Col md={12} >
-
-                <div className="movie-view" >
-                    <Row>
-                        <Col className="movie-col" md={6}>
-                            <div className="movie-poster" ><img src={movie.ImagePath} crossOrigin="anonymous" className='movie-image' /></div>
-                        </Col>
-
-
-                        <Col className="movie-col" md={6}>
-                            <Row >
-                                <div className="movie-title">
-                                    <span className="value">{movie.Title}</span>
-                                </div>
-                                <div className="movie-description">
-                                    <span className="value">{movie.Description}</span>
-                                </div>
-
-
-                                <Link to={`/genres/${movie.Genre.Name}`}>
-                                    <div className="movie-genre">
-                                        <span className="value">{movie.Genre.Name}</span>
-                                    </div>
-                                </Link>
-                            </Row>
-                            <Row>
-                                <Link to={`/directors/${movie.Director.Name}`}>
-                                    <div className="movie-director">
-                                        <span className="value">Directed by {movie.Director.Name}</span>
-                                    </div>
-                                </Link>
-
-                            </Row>
-                            <Row className="back-row"><Col ><Button onClick={() => { onBackClick(); }} >Back</Button></Col></Row>
-
-
-                        </Col>
-                    </Row>
-
-                </div>
-                <Row><Col md={12}>  </Col></Row>
-            </Col>
-
-        </Row>
+    render() {
+        const { movie, onBackClick } = this.props;
+        console.log(movie)
+        return (
+          <Container>
+            <Button variant='secondary' style={{ marginTop: 10, marginBottom: 10 }} onClick={() => { onBackClick(null); }}>Back</Button>
+            <Row>
+              <Col>
+    
+                <Card className='movie-view' style={{ marginTop: 50, marginBottom: 30, padding: 10 }}>
+                  <Card.Img variant="top" src={movie.ImagePath} style={{ padding: 10 }} crossOrigin='anonymous' />
+                  <Card.Title className='movie-title'>
+                    <span className='value' style={{ textAlign: 'center', fontSize: '2rem' }}>{movie.Title}</span>
+                  </Card.Title>
+    
+    
+                  <Card.Text className='movie-description'>
+                    <span className='value'>{movie.Description}</span>
+                  </Card.Text>
+                </Card>
+              </Col>
+            </Row>
+    
+            <Row>
+    
+              <Link to={`/directors/${movie.Director.Name}`}>
+                <Button variant="secondary" style={{ margin: 10 }}>Director</Button>
+              </Link>
+    
+              <Link to={`/genres/${movie.Genre.Name}`}>
+                <Button variant="secondary" style={{ margin: 10 }}>Genre</Button>
+              </Link>
+    
+            </Row>
+            </Container >
 
     )
 }

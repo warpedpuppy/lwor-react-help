@@ -22,7 +22,7 @@ export class MovieCard extends React.Component {
     const token = localStorage.getItem('token');
 
     axios.post(
-      `https://popcorns-and-coke.herokuapp.com/users/${Username}/movies/${movie._id}`,
+      ` https://intense-ridge-76926.herokuapp.com//users/${Username}/movies/${movie._id}`,
       {
         FavoriteMovies: this.state.FavoriteMovies
       },
@@ -61,6 +61,7 @@ export class MovieCard extends React.Component {
     );
   }
 }
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
