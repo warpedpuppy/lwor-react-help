@@ -16,6 +16,7 @@ import { DirectorView } from '../director-view/director-view';
 
 import { setMovies, setUser } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
+import NavBar from '../nav-bar/nav-bar'
 
 import './main-view.scss';
 
