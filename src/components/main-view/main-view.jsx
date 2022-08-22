@@ -15,7 +15,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 
 import { setMovies, setUser } from '../../actions/actions';
-import MoviesList from '../movie-list/movie-list';
+import MoviesList from '../movies-list/movies-list';
 
 import './main-view.scss';
 

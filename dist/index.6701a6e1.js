@@ -25750,7 +25750,9 @@ var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 var _loginView = require("../login-view/login-view");
+var _loginViewDefault = parcelHelpers.interopDefault(_loginView);
 var _registrationView = require("../registration-view/registration-view");
+var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _profileView = require("../profile-view/profile-view");
 var _genreView = require("../genre-view/genre-view");
@@ -25805,14 +25807,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 81
+                lineNumber: 82
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                 className: "main-view justify-content-md-center",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 82
+                    lineNumber: 83
                 },
                 __self: this,
                 children: [
@@ -25821,7 +25823,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "/",
                         render: ()=>{
                             if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginViewDefault.default, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
                             }));
@@ -25834,7 +25836,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 84
+                            lineNumber: 85
                         },
                         __self: this
                     }),
@@ -25851,7 +25853,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 95
+                            lineNumber: 96
                         },
                         __self: this
                     }),
@@ -25859,7 +25861,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "/movies/:movieId",
                         render: ({ match , history  })=>{
                             if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginViewDefault.default, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
                             }));
@@ -25878,7 +25880,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 106
+                            lineNumber: 107
                         },
                         __self: this
                     }),
@@ -25886,7 +25888,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "/genre/:name",
                         render: ({ match , history  })=>{
                             if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginViewDefault.default, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
                             }));
@@ -25907,7 +25909,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 125
+                            lineNumber: 126
                         },
                         __self: this
                     }),
@@ -25915,7 +25917,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "/director/:name",
                         render: ({ match , history  })=>{
                             if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginViewDefault.default, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
                             }));
@@ -25936,7 +25938,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 146
+                            lineNumber: 147
                         },
                         __self: this
                     }),
@@ -25944,7 +25946,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "profile",
                         render: ({ history  })=>{
                             if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_loginViewDefault.default, {
                                     onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                 })
                             }));
@@ -25958,7 +25960,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 168
+                            lineNumber: 169
                         },
                         __self: this
                     })
@@ -25981,7 +25983,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-view/movie-view":"ikZdr","../profile-view/profile-view":"2E7Aw","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-redux":"2L0if","react-router-dom":"cpyQW","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-view/movie-view":"ikZdr","../profile-view/profile-view":"2E7Aw","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../../actions/actions":"1Ttfj","./main-view.scss":"jyMAr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","../movie-card/movie-card":"6EiBJ","../movies-list/movies-list":"1kGQ5"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -42932,137 +42934,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"hWS1b":[function() {},{}],"1kGQ5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2519 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2519.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _reactRedux = require("react-redux");
-var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
-var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
-var _movieCard = require("../movie-card/movie-card");
-var _actions = require("../../actions/actions");
-const mapStateToProps = (state)=>{
-    const { visibilityFilter  } = state;
-    return {
-        visibilityFilter
-    };
-};
-function MoviesList(props) {
-    const { movies , visibilityFilter  } = props;
-    let filteredMovies = movies;
-    if (visibilityFilter !== "") filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
-    );
-    if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-        className: "main-view",
-        __source: {
-            fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 25
-        },
-        __self: this
-    }));
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                md: 12,
-                style: {
-                    margin: "1em"
-                },
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 29
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
-                    visibilityFilter: visibilityFilter,
-                    __source: {
-                        fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 30
-                    },
-                    __self: this
-                })
-            }),
-            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    md: 3,
-                    __source: {
-                        fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 33
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                        movie: m,
-                        __source: {
-                            fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 34
-                        },
-                        __self: this
-                    })
-                }, m._id)
-            )
-        ]
-    }));
-}
-_c = MoviesList;
-exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
-var _c;
-$RefreshReg$(_c, "MoviesList");
-
-  $parcel$ReactRefreshHelpers$2519.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Col":"fbam0","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"7ZxGS":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9bc3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9bc3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRedux = require("react-redux");
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _actions = require("../../actions/actions");
-function VisibilityFilterInput(props) {
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-        onChange: (e)=>props.setFilter(e.target.value)
-        ,
-        value: props.visibilityFilter,
-        placeholder: "filter",
-        __source: {
-            fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
-            lineNumber: 9
-        },
-        __self: this
-    }));
-}
-_c = VisibilityFilterInput;
-exports.default = _reactRedux.connect(null, {
-    setFilter: _actions.setFilter
-})(VisibilityFilterInput);
-var _c;
-$RefreshReg$(_c, "VisibilityFilterInput");
-
-  $parcel$ReactRefreshHelpers$9bc3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","react-router-dom":"cpyQW","./director-view.scss":"hWS1b","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"hWS1b":[function() {},{}],"jyMAr":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43217,7 +43089,137 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-router-dom":"cpyQW","axios":"iYoWk","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"jyMAr":[function() {},{}],"8GWVf":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-router-dom":"cpyQW","axios":"iYoWk","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cF5gT":[function() {},{}],"1kGQ5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2519 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2519.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _reactRedux = require("react-redux");
+var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
+var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
+var _movieCard = require("../movie-card/movie-card");
+var _actions = require("../../actions/actions");
+const mapStateToProps = (state)=>{
+    const { visibilityFilter  } = state;
+    return {
+        visibilityFilter
+    };
+};
+function MoviesList(props) {
+    const { movies , visibilityFilter  } = props;
+    let filteredMovies = movies;
+    if (visibilityFilter !== "") filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+    );
+    if (!movies) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        className: "main-view",
+        __source: {
+            fileName: "src/components/movies-list/movies-list.jsx",
+            lineNumber: 25
+        },
+        __self: this
+    }));
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                md: 12,
+                style: {
+                    margin: "1em"
+                },
+                __source: {
+                    fileName: "src/components/movies-list/movies-list.jsx",
+                    lineNumber: 29
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
+                    visibilityFilter: visibilityFilter,
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 30
+                    },
+                    __self: this
+                })
+            }),
+            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    md: 3,
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 33
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                        movie: m,
+                        __source: {
+                            fileName: "src/components/movies-list/movies-list.jsx",
+                            lineNumber: 34
+                        },
+                        __self: this
+                    })
+                }, m._id)
+            )
+        ]
+    }));
+}
+_c = MoviesList;
+exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
+var _c;
+$RefreshReg$(_c, "MoviesList");
+
+  $parcel$ReactRefreshHelpers$2519.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Col":"fbam0","react-redux":"2L0if","../visibility-filter-input/visibility-filter-input":"7ZxGS","../movie-card/movie-card":"6EiBJ","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"7ZxGS":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9bc3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9bc3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRedux = require("react-redux");
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _actions = require("../../actions/actions");
+function VisibilityFilterInput(props) {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+        onChange: (e)=>props.setFilter(e.target.value)
+        ,
+        value: props.visibilityFilter,
+        placeholder: "filter",
+        __source: {
+            fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
+            lineNumber: 9
+        },
+        __self: this
+    }));
+}
+_c = VisibilityFilterInput;
+exports.default = _reactRedux.connect(null, {
+    setFilter: _actions.setFilter
+})(VisibilityFilterInput);
+var _c;
+$RefreshReg$(_c, "VisibilityFilterInput");
+
+  $parcel$ReactRefreshHelpers$9bc3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"8GWVf":[function(require,module,exports) {
 'use strict';
 var compose = require('redux').compose;
 exports.__esModule = true;
