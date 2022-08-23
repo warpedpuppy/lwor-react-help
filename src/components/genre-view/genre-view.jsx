@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button, Card } from 'react-bootstrap';
+import { Container, Card, Button, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import "./genre-view.scss";
@@ -9,25 +9,17 @@ export class GenreView extends React.Component {
   render() {
       const { Genre, onBackClick, movies } = this.props;
  return (
-    <>
+  <Container className="genre-view">
       <Card bg="secondary" text="light" border="light" align="center">
           <Card.Body>
-            <Card.Title>Genre</Card.Title>
-            <div className="genre-name">
-              <span className="label">Name: </span>
-              <span className="value">{Genre.Name}</span>
-            </div>
-            <div className="genre-description">
-              <span className="label">Description: </span>
-              <span className="value">{Genre.Description}</span>
-            </div>
-            <Link to={`/`}>
-              <Button onClick={() => onBackClick(null)} variant="light" style={{ color: "white" }}>Back</Button>
-            </Link>
-        </Card.Body>
-      </Card>
-   
-    </>        
+          <Card.Title>{genre.Name}</Card.Title>
+          <Card.Text>
+              <span className="value">{genre.Description}</span>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Button variant="outline-light" onClick={() => { onBackClick(); }}>Back</Button>
+      </Container>
  )
 
 }

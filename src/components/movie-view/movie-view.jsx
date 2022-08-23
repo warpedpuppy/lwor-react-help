@@ -1,50 +1,51 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Container, Row, Col, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
-import axios from 'axios';import Button from 'react-bootstrap/Button';
 
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
-  keypressCallback(event) {
-    console.log(event.key);
-  }
+    render() {
+        const { movie, onBackClick } = this.props;
+        console.log(movie)
+        return (
+          <Container>
+            <Button variant='secondary' style={{ marginTop: 10, marginBottom: 10 }} onClick={() => { onBackClick(null); }}>Back</Button>
+            <Row>
+              <Col>
+    
+                <Card className='movie-view' style={{ marginTop: 50, marginBottom: 30, padding: 10 }}>
+                  <Card.Img variant="top" src={movie.ImagePath} style={{ padding: 10 }} crossOrigin='anonymous' />
+                  <Card.Title className='movie-title'>
+                    <span className='value' style={{ textAlign: 'center', fontSize: '2rem' }}>{movie.Title}</span>
+                  </Card.Title>
+    
+    
+                  <Card.Text className='movie-description'>
+                    <span className='value'>{movie.Description}</span>
+                  </Card.Text>
+                </Card>
+              </Col>
+            </Row>
+    
+            <Row>
+    
+              <Link to={`/directors/${movie.Director.Name}`}>
+                <Button variant="secondary" style={{ margin: 10 }}>Director</Button>
+              </Link>
+    
+              <Link to={`/genres/${movie.Genre.Name}`}>
+                <Button variant="secondary" style={{ margin: 10 }}>Genre</Button>
+              </Link>
+    
+            </Row>
+            </Container >
 
-  componentDidMount() {
-    document.addEventListener('keypress', this.keypressCallback);
-  }
-
-
-  render() {
-    const { movie, onBackClick } = this.props;
-
-    return (
-      <Container className="movie-view">
-      <Row >
-          <Col>
-              <Card.Img variant="bottom" src={movie.ImagePath} crossOrigin="anonymous" />
-          </Col>
-          <Col>
-              <Card.Body>
-                  <Card.Title>{movie.Title}</Card.Title>
-                  <Card.Text>{movie.Description}</Card.Text>
-              </Card.Body>
-
-              <Card.Body>
-                  <Card.Subtitle className="mb-2 text-muted">Genre:</Card.Subtitle>
-                  <Card.Text>{movie.Genre.Name}</Card.Text>
-              </Card.Body>
-              <Card.Body>
-                  <Card.Subtitle className="mb-2 text-muted">Director:</Card.Subtitle>
-                  <Card.Text>{movie.Director.Name}</Card.Text>
-                  <Button onClick={() => { onBackClick() }}>Back</Button>
-              </Card.Body>
-          </Col>
-      </Row>
-  </Container>
-
-    );
-  }
+    )
 }
+}
+

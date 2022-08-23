@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Form, Card, Col, Row, Container, CardGroup, Button } from "react-bootstrap";
 
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'
 
 import './login-view.scss';
 
@@ -30,19 +28,21 @@ export function LoginView(props) {
   };
 
   return (
-    <><form>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-      </label>
-      <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
-    <button>
-        <a>New user? Click here to register!</a>
-      </button></> 
+    <div className="login-view">
+      <Form>
+        <Form.Group controlId="formUsername">
+          <Form.Label id="label" >Username:</Form.Label>
+          <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+        </Form.Group>
+
+        <Form.Group controlId="formPassword">
+          <Form.Label id="label" >Password:</Form.Label>
+          <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+        </Form.Group>
+
+        <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+      </Form>
+    </div>
+
   );
 }
