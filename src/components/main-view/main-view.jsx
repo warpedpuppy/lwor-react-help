@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import  LoginView  from '../login-view/login-view';
+import  {LoginView}  from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from '../movie-view/movie-view';
