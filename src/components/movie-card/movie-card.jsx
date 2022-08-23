@@ -9,8 +9,8 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       FavoriteMovies: []
@@ -42,21 +42,24 @@ export class MovieCard extends React.Component {
   };
 
   render() {
-    const { movie, onAddFavorite } = this.props;
+    const { movie } = this.props;
 
     return (
-      <Card id="main-card">
-        <Card.Img id="cover_img" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
+      <Card className="movie-card" key={movie._id}>
+         <Card.Img variant="top" src={movie.ImagePath} style={{ padding: 10 }} crossOrigin='anonymous' />
+       
         <Card.Body>
-          <Card.Title className="text-center">
+        <Card.Title>{movie.Title}</Card.Title>
+        <Card.Subtitle>{movie.Genre.Name}</Card.Subtitle>
             <Link to={`/movies/${movie._id}`}>
               <Button variant="link">{movie.Title}</Button>
-            </Link></Card.Title>
+            </Link>
           <Card.Text>{movie.Description}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-center">
           <Button variant="primary" value={movie._id} onClick={() => this.onAddFavorite(movie)}>Add to Favorite</Button>
         </Card.Footer>
+       
       </Card>
     );
   }
@@ -66,12 +69,7 @@ export class MovieCard extends React.Component {
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired,
-    Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired
-    }),
-    Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired
-    })
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired
   }).isRequired
 };
