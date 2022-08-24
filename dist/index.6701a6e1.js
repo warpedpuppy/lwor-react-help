@@ -41411,8 +41411,6 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _actions = require("../../actions/actions");
-var _reactRedux = require("react-redux");
 var _loginViewScss = require("./login-view.scss");
 var _s = $RefreshSig$();
 function LoginView(props) {
@@ -41454,21 +41452,21 @@ function LoginView(props) {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 54
+                lineNumber: 52
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 55
+                        lineNumber: 53
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 56
+                                lineNumber: 54
                             },
                             __self: this,
                             children: "Username:"
@@ -41480,14 +41478,14 @@ function LoginView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 57
+                                lineNumber: 55
                             },
                             __self: this
                         }),
                         usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 59
+                                lineNumber: 57
                             },
                             __self: this,
                             children: usernameErr
@@ -41497,14 +41495,14 @@ function LoginView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 61
+                        lineNumber: 59
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 62
+                                lineNumber: 60
                             },
                             __self: this,
                             children: "Password:"
@@ -41516,14 +41514,14 @@ function LoginView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 63
+                                lineNumber: 61
                             },
                             __self: this
                         }),
                         passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 65
+                                lineNumber: 63
                             },
                             __self: this,
                             children: passwordErr
@@ -41536,7 +41534,7 @@ function LoginView(props) {
                     onClick: handleSubmit,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 67
+                        lineNumber: 65
                     },
                     __self: this,
                     children: "Submit"
@@ -41544,7 +41542,7 @@ function LoginView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 67
+                        lineNumber: 65
                     },
                     __self: this
                 }),
@@ -41552,7 +41550,7 @@ function LoginView(props) {
                     to: `/register`,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 68
+                        lineNumber: 66
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -41561,7 +41559,7 @@ function LoginView(props) {
                         className: "btn",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 69
+                            lineNumber: 67
                         },
                         __self: this,
                         children: "Register"
@@ -41584,7 +41582,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","react-redux":"2L0if"}],"lS4BK":[function() {},{}],"5V79J":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","prop-types":"1tgq3","./login-view.scss":"lS4BK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap":"h2YVd","react-bootstrap/Form":"5ykgY"}],"lS4BK":[function() {},{}],"5V79J":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {

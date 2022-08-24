@@ -3,8 +3,6 @@ import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { setUser, validateInput } from '../../actions/actions';
-import { connect } from 'react-redux';
 import "./login-view.scss";
 
 export function LoginView(props) {
