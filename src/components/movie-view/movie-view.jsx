@@ -11,52 +11,40 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-        <Row className="main-view justify-content-md-center">
-            <Col md={12} >
-
-                <div className="movie-view" >
-                    <Row>
-                        <Col className="movie-col" md={6}>
-                            <div className="movie-poster" ><img src={movie.ImagePath} crossOrigin="anonymous" className='movie-image' /></div>
-                        </Col>
-
-
-                        <Col className="movie-col" md={6}>
-                            <Row >
-                                <div className="movie-title">
-                                    <span className="value">{movie.Title}</span>
-                                </div>
-                                <div className="movie-description">
-                                    <span className="value">{movie.Description}</span>
-                                </div>
-
-
-                                <Link to={`/genres/${movie.Genre.Name}`}>
-                                    <div className="movie-genre">
-                                        <span className="value">{movie.Genre.Name}</span>
-                                    </div>
-                                </Link>
-                            </Row>
-                            <Row>
-                                <Link to={`/directors/${movie.Director.Name}`}>
-                                    <div className="movie-director">
-                                        <span className="value">Directed by {movie.Director.Name}</span>
-                                    </div>
-                                </Link>
-
-                            </Row>
-                            <Row className="back-row"><Col ><Button onClick={() => { onBackClick(); }} >Back</Button></Col></Row>
-
-
-                        </Col>
-                    </Row>
-
-                </div>
-                <Row><Col md={12}>  </Col></Row>
-            </Col>
-
-        </Row>
-
+      <Container>
+      {movie && (
+          <Row>
+              <Col>
+                  <Card id="movie-view">
+                      <Card.Body>
+                          <Card.Img
+                              id="movie-view-image"
+                              variant="top"
+                              src={movie.ImagePath}
+                          />
+                          <Card.Title id="movie-Title" className="movie-title">
+                              {movie.Title}
+                          </Card.Title>
+                          <Card.Text
+                              id="movie-description"
+                              className="movie-description"
+                          >
+                              {movie.Description}
+                          </Card.Text>
+                          <Card.Text id="movie-director" className="movie-director">
+                              Director: {movie.Director.Name}
+                          </Card.Text>
+                          <Card.Text id="movie-genre" className="movie-genre">
+                              Genre: {movie.Genre.Name}
+                          </Card.Text>
+                      </Card.Body>
+                  </Card>
+                  <Button id="movie-view-button" onClick={() => { onBackClick(null); }}>Back</Button>
+                  <Button id="movie-view-button" onClick={() => { }}>Add to Favorites</Button>
+              </Col>
+          </Row>
+      )}
+  </Container>
     )
 }
 }
