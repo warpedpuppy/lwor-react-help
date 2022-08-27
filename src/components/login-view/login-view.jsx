@@ -33,7 +33,7 @@ export function LoginView(props) {
     e.preventDefault();
     const isReq = validate();
     if (isReq) {
-    /* Send a request to the server for authentication */
+    
     axios.post('https://intense-ridge-76926.herokuapp.com/login', {
       Username: username,
       Password: password
@@ -58,7 +58,7 @@ export function LoginView(props) {
             <Form.Group>
                 <Form.Label>Password:</Form.Label>
                 <Form.Control type="password" vaue={password} onChange={e=>setPassword(e.target.value)} />
-                 {/* code added here to display validation error */}
+                
                 {passwordErr && <p>{passwordErr}</p>}
             </Form.Group>
             <Button variant="primary" type='submit' onClick={handleSubmit}>Submit</Button><br></br>
