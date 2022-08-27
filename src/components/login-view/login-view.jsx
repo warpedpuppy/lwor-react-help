@@ -1,39 +1,19 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import { Button } from 'react-bootstrap';
+import { Form, Card, Col, Row, Container, CardGroup, Button } from "react-bootstrap";
+
 import axios from 'axios';
-import PropTypes from 'prop-types';
-import "./login-view.scss";
+import PropTypes from 'prop-types'
+
+import './login-view.scss';
 
 export function LoginView(props) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [usernameErr, setUsernameErr] = useState('');
-  const [passwordErr, setPasswordErr] = useState('');
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
 
-  const validate = () => {
-    let isReq = true;
-    if (!username) {
-      setUsernameErr('Username Required');
-      isReq = false;
-    } else if (username.length < 2) {
-      setUsernameErr('Username must be 2 or more characters long');
-      isReq = false;
-    }
-    if (!password) {
-      setPasswordErr('Password is required.');
-      isReq = false;
-    } else if (password.length < 6) {
-      setPasswordErr('Password must be 6 or more characters long');
-      isReq = false;
-    }
-    return isReq;
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    const isReq = validate();
-    if (isReq) {
     
+    /* Send a request to the server for authentication */
     axios.post('https://intense-ridge-76926.herokuapp.com/login', {
       Username: username,
       Password: password
@@ -48,33 +28,21 @@ export function LoginView(props) {
   };
 
   return (
-  
+    <div className="login-view">
       <Form>
-         <Form.Group>
-                <Form.Label>Username:</Form.Label>
-                <Form.Control type="text" vaue={username} onChange={e=>setUsername(e.target.value)} />
-                {usernameErr && <p>{usernameErr}</p>}
-            </Form.Group>
-            <Form.Group>
-                <Form.Label>Password:</Form.Label>
-                <Form.Control type="password" vaue={password} onChange={e=>setPassword(e.target.value)} />
-                
-                {passwordErr && <p>{passwordErr}</p>}
-            </Form.Group>
-            <Button variant="primary" type='submit' onClick={handleSubmit}>Submit</Button><br></br>
-            <Link to={`/register`} >
-                <Button  type='button' variant="danger" className='btn'>Register</Button>
-        </Link> 
-      </Form>
+        <Form.Group controlId="formUsername">
+          <Form.Label id="label" >Username:</Form.Label>
+          <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+        </Form.Group>
 
-   
+        <Form.Group controlId="formPassword">
+          <Form.Label id="label" >Password:</Form.Label>
+          <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+        </Form.Group>
+
+        <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+      </Form>
+    </div>
 
   );
-}
-
-LoginView.propTypes = {
-  onLoggedIn: PropTypes.func.isRequired
-};
-
-
 }
