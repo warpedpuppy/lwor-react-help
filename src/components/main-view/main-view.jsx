@@ -16,7 +16,7 @@ import { DirectorView } from '../director-view/director-view';
 
 import { setMovies, setUser } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
-import NavBar from '../nav-bar/nav-bar'
+
 
 import './main-view.scss';
 
@@ -70,7 +70,7 @@ class MainView extends React.Component {
   render() {
     let { movies } = this.props;
     let { user } = this.state;
-    let localUser = localStorage.getItem('user');
+    
 
     
    
@@ -78,7 +78,7 @@ class MainView extends React.Component {
   
     return(
       <Router>
-        <Container>
+      
         <Row className='main-view justify-content-md-center'>
 
         <Route exact path='/' render={() => {
@@ -183,24 +183,17 @@ class MainView extends React.Component {
 
 
         </Row>
-        </Container>
+      
       </Router>
     );
   }
 }
 
-let mapStateToProps = (state) => {
-  return { 
-    movies: state.movies, 
-    user: state.user,
- 
-  }
-};
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
 
-export default connect(mapStateToProps, { setMovies })(
-  MainView
-);
-
+export default connect(mapStateToProps, { setMovies })(MainView);
 
  
    
