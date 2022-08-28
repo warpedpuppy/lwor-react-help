@@ -271,6 +271,7 @@ export class ProfileView extends React.Component {
                                             return (
                                                 <Card className="favorite-movie card-content" key={movie._id} >
                                                     <Card.Img
+													crossOrigin='anonymous'
                                                         className="fav-poster"
                                                         variant="top"
                                                         src={movie.ImagePath}

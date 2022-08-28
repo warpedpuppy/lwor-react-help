@@ -7,8 +7,8 @@ import { MovieCard } from '../movie-card/movie-card';
 
 
 const mapStateToProps = (state) => {
-  const { visibilityFilter } = state;
-  return { visibilityFilter };
+  const { visibilityFilter, movies } = state;
+  return { visibilityFilter, movies };
 };
 
 function MoviesList(props) {
@@ -28,8 +28,8 @@ function MoviesList(props) {
       <VisibilityFilterInput visibilityFilter={visibilityFilter} />
     </Col>
 
-    {filteredMovies.map(m => (
-      <Col xs={12} sm={6} md={3} key={movies._id}>
+    {filteredMovies.map( (m, i) => (
+      <Col xs={12} sm={6} md={3} key={i}>
         <MovieCard movie={m} />
       </Col>
     ))}

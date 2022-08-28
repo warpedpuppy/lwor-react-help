@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+import { Menu } from '../menu/menu';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -78,7 +79,7 @@ class MainView extends React.Component {
   
     return(
       <Router>
-      
+		<Menu />
         <Row className='main-view justify-content-md-center'>
 
         <Route exact path='/' render={() => {
@@ -87,7 +88,7 @@ class MainView extends React.Component {
                   </Col>
                   if (movies.length === 0) return <div className="main-view" />;
 
-                  return <MoviesList movies={movies} />;
+                  return <MoviesList />;
                 }} />
 
     
@@ -133,11 +134,11 @@ class MainView extends React.Component {
                 if (movies.length === 0) {
                 return <div className='main-view' />;
         }
-              
+            //   console.log(movies)
               return (
                <Col md={8}>
                 <GenreView 
-                genre={movies.find((m) => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} 
+                genre={movies.find( m => m.Genre.Name.toLowerCase() === match.params.name.toLowerCase() ).Genre} onBackClick={() => history.goBack()} 
                />
               </Col>
               )
@@ -159,13 +160,13 @@ class MainView extends React.Component {
               <DirectorView
                   director={movies.find(m => m.Director.Name === match.params.name).Director}
                   onBackClick={() => history.goBack()}
-                  movies={movies.filter(movie => movies.Director.Name === match.params.name)} />
+                  movies={movies.filter( movie => movie.Director.Name === match.params.name )} />
           </Col>
       );
   }} />
 
         
-<Route path= 'profile' render={({ history }) => {
+<Route path= '/profile' render={({ history }) => {
          if (!user) {
            return (
             <Col>

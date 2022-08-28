@@ -18,6 +18,7 @@ export class MovieView extends React.Component {
                   <Card id="movie-view">
                       <Card.Body>
                           <Card.Img
+						  	  crossOrigin='anonymous'
                               id="movie-view-image"
                               variant="top"
                               src={movie.ImagePath}

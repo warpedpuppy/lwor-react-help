@@ -8,7 +8,7 @@ export class DirectorView extends React.Component {
     render() {
         const { director, onBackClick } = this.props;
 
-        rreturn (
+        return (
             <Container className="director-view">
               <Card className="border-0" style={{ color: "white", backgroundColor: "#222831" }}>
                 <Card.Body>

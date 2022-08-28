@@ -7,7 +7,7 @@ import "./genre-view.scss";
 
 export class GenreView extends React.Component {
   render() {
-      const { Genre, onBackClick, movies } = this.props;
+      const { genre, onBackClick, movies } = this.props;
  return (
   <Container className="genre-view">
       <Card bg="secondary" text="light" border="light" align="center">

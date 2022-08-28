@@ -62,6 +62,20 @@ body {
   background-color: #1D0334;
   color: #ffffff;
 }
+nav {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 20px;
+}
 .my-flix {
   color: steelblue;
 }
